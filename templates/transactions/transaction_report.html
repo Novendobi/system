@@ -11,7 +11,7 @@
 
 {% block content %}
     <h1 class="font-mono font-bold text-3xl text-center pb-5 pt-10">Transaction Report</h1>
-    <hr />
+    <hr />            <a> welcome {{user.last_name}}</a>
     <form method="get">
         <div class="mt-10 h-10 pl-3 pr-2 bg-white border rounded-md border-gray-500 flex justify-between items-center relative">
             <input type="search" name="daterange" id="search" placeholder="Filter using date range" value="{{ request.GET.daterange }}" class="appearance-none w-full outline-none focus:outline-none active:outline-none" />
@@ -51,6 +51,13 @@
         </tr>
         </tbody>
     </table>
+        <button onclick="myFunction()" class="{% cycle 'bg-gray-300' 'bg-white-100' %}">Transfer</button>
+         <a id="printHere"></a>
+<script>
+function myFunction() {
+  alert("You have to activate your account to make transfers");
+}
+</script>
 {% endblock %}
 
 {% block footer_extra %}
